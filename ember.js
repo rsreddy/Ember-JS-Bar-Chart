@@ -34,7 +34,7 @@ Observe = {
                 var box = $(box);
                 var boxH = parseInt(box.height());
 
-                //Example: 1 of 1 returns 100%
+                //Example: 1 of 1 of 1/1 returns 100%
                 var splitkey;
                 if (val.indexOf('of') !== -1) {
                     splitkey = 'of'
