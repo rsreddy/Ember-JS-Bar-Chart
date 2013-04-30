@@ -3,7 +3,6 @@ Ember JS Bar Chart
 Author: Carlos Rodriguez
 2013
 */
-
 Observe = {
     init: function (opts) {
         App = Em.Application.create({});
@@ -15,14 +14,9 @@ Observe = {
         App.names = names;
         App.SelView = Em.Select.extend({
             selectedPerson: null
-			/* save for later
-            valueDidChange: function (sender, key, value, context, rev) {
-                //console.log(this.get('value'));        
-            }.observes('value'),
-            */
         });
     },
-	bar: function () {
+    bar: function () {
         App.BarView = Em.CollectionView.create({
             content: App.names,
             itemViewClass: Em.View.extend({
@@ -40,12 +34,14 @@ Observe = {
                 var box = $(box);
                 var boxH = parseInt(box.height());
 
-                /* save for later: var val = val/boxH*100; */
-                
                 //Example: 1 of 1 returns 100%
-				var splitkey;
-				if(val.indexOf('of') !== -1){splitkey = 'of'};
-				if(val.indexOf('/') !== -1){splitkey = '/'};
+                var splitkey;
+                if (val.indexOf('of') !== -1) {
+                    splitkey = 'of'
+                };
+                if (val.indexOf('/') !== -1) {
+                    splitkey = '/'
+                };
                 if (splitkey) {
                     val = $.trim(val);
                     val = val.split(splitkey);
